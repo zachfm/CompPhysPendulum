@@ -35,6 +35,7 @@ def run_oscillator():
         #ok = input("Vel: " + str(pend.curr_vel) + "\nPos: " + str(pend.curr_pos))
         pend = bashforthadams("pos", pend)
         pend = bashforthadams("vel", pend)
+	
         if i == 1000000:
             break
 

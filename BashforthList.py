@@ -1,5 +1,3 @@
-import matplotlib.pyplot as plt
-import numpy as np
 
 import math
 
@@ -10,15 +8,6 @@ class Pendulum:
         self.vel = []
         self.theta = []
         self.accel = []
-
-"""
-class Pendulum:
-    def __init__(self):
-        self.curr_vel = -.1
-        self.prev_vel = 0
-        self.curr_pos = 89
-        self.prev_pos = 90
-"""
 
 k = 3.5
 
@@ -40,11 +29,21 @@ def run_oscillator(pend):
         #ok = input("Vel: " + str(pend.curr_vel) + "\nPos: " + str(pend.curr_pos))
         bashforthadams("pos", pend)
         bashforthadams("vel", pend)
+def main():
+    pend = Pendulum()
+    run_oscillator(pend)
 
-pend = Pendulum()
-run_oscillator(pend)
+def solve_analytical_small():
+    timestep = .25
+    pend_small = Pendulum()
+    t = 0
+    for i in range(100):
+            pend.theta.append(pend.theta[0]*math.cos(k*t))
+            pend.vel.append((-1)*k*pend.vel[0]*math.sin(k*t))
+            t += timestep
+    return pend_small
 
 plt.plot(pend.theta, pend.vel)
-plt.xlabel('t')
-plt.ylabel('y(t)')
+plt.xlabel('theta')
+plt.ylabel('vel')
 plt.show()
