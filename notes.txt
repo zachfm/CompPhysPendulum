@@ -14,7 +14,7 @@ visualization
 	log-linear scale for exponential relationship
 	
 	phase-space plot
-		plot v over x
+		plot v vs x
 		
 		conservative = closed loop and ellipse
 			
